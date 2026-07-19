@@ -7,7 +7,7 @@
 #    && rm -rf /var/lib/apt/lists/* \
 #    && apt-get -y autoremove
 
-FROM python:3.8-alpine
+FROM python:3.12-alpine
 
 WORKDIR /usr/src/app
 
@@ -15,10 +15,11 @@ COPY requirements.txt ./
 
 RUN apk add --update --no-cache --virtual .build-deps \
         g++ \
-        python-dev \
+        python3-dev \
         libxml2 \
         libxml2-dev && \
-    apk add libxslt-dev aircrack-ng tshark bash && \
+    apk add --no-cache libxslt-dev aircrack-ng tshark bash && \
+    pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
     apk del .build-deps
 

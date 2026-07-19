@@ -12,7 +12,6 @@ try:
     import argparse
     import threading
     import traceback
-    import urllib.request as urllib2
 except KeyboardInterrupt:
     print("\n[I] Stopping...")
     raise SystemExit

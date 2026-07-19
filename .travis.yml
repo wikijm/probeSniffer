@@ -1,8 +1,9 @@
 language: python
 python:
-  - "3.3"
-  - "3.4"
-  - "3.5"
-  - "3.6"
-install: "sudo apt update && sudo apt install tshark python3-pip -y && sudo python3 -m pip install -r requirements.txt"
+  - "3.8"
+  - "3.9"
+  - "3.10"
+  - "3.11"
+  - "3.12"
+install: "sudo apt update && sudo apt install tshark python3-pip -y && sudo python3 -m pip install --upgrade pip && sudo python3 -m pip install -r requirements.txt"
 script: sudo ./probeSniffer.py -h

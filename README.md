@@ -56,20 +56,22 @@
   <h3>Kali Linux / Raspbian:</h3>
 
 ```
-$ sudo apt-get update && sudo apt-get install python3 python3-pip tshark -y
+$ sudo apt-get update && sudo apt-get install python3 python3-pip tshark python3-venv -y
 
 $ git clone https://github.com/xdavidhu/probeSniffer
 
 $ cd probeSniffer/
 
-$ python3 -m pip install -r requirements.txt
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
-**WARNING**: probeSniffer is only compatible with Python 3.3 & 3.4 & 3.5 & 3.6
+**WARNING**: probeSniffer is only compatible with Python 3.8 through 3.12
 
 # usage:
 **Make sure to put your interface into monitor mode before!**</br>
 
-    $ sudo python3 probeSniffer.py [monitor-mode-interface] [options]
+    $ sudo venv/bin/python probeSniffer.py [monitor-mode-interface] [options]
 
 # disclaimer:
   I'm not responsible for anything you do with this program, so please only use it for good and educational purposes.
